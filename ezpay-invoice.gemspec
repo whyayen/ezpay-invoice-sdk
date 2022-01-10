@@ -1,8 +1,8 @@
-require_relative 'lib/ezpay/invoice/sdk/version'
+require_relative 'lib/ezpay-invoice/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "ezpay-invoice-sdk"
-  spec.version       = Ezpay::Invoice::Sdk::VERSION
+  spec.version       = EzpayInvoice::VERSION
   spec.authors       = ["Whyayen"]
   spec.email         = ["c75a90@gmail.com"]
 
