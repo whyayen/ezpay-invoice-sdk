@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ezpay-invoice-sdk (0.1.0)
+    ezpay-invoice-sdk (0.0.1)
 
 GEM
   remote: https://rubygems.org/
