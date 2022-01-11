@@ -1,5 +1,5 @@
 module EzpayInvoice
-  module Config
+  module Configurable
     extend self
 
     attr_accessor :merchant_id, :hash_key, :hash_iv
@@ -18,11 +18,11 @@ module EzpayInvoice
 
   class << self
     def setup
-      block_given? ? yield(Config) : Config
+      block_given? ? yield(Configurable) : Configurable
     end
 
     def config
-      Config
+      Configurable
     end
   end
 end
