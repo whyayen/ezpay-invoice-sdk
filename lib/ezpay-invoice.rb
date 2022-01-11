@@ -1,8 +1,11 @@
-require_relative "ezpay-invoice/version"
-require_relative "ezpay-invoice/configurable"
+require 'ezpay-invoice/version'
+require 'ezpay-invoice/configurable'
+require 'ezpay-invoice/client'
 
 module EzpayInvoice
-  include EzpayInvoice::Configurable
+  class << self
+    include EzpayInvoice::Configurable
+  end
 
   class Error < StandardError; end
 end

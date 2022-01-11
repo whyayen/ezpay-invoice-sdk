@@ -1,7 +1,5 @@
 module EzpayInvoice
   module Configurable
-    extend self
-
     attr_accessor :merchant_id, :hash_key, :hash_iv
 
     MODES = ['dev', 'prod']
@@ -14,15 +12,24 @@ module EzpayInvoice
       raise ArgumentError, "mode must be one of [#{MODES.join(', ')}]." if !MODES.include?(_mode)
       @mode = _mode
     end
-  end
 
-  class << self
     def setup
-      block_given? ? yield(Configurable) : Configurable
+      block_given? ? yield(self) : self
     end
 
     def config
-      Configurable
+      self
+    end
+
+    class << self
+      def attributes
+        @attributes ||= [
+          :merchant_id,
+          :hash_key,
+          :hash_iv,
+          :mode
+        ]
+      end
     end
   end
 end
