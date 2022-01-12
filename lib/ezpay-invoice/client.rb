@@ -1,5 +1,3 @@
-require 'ezpay-invoice/configurable'
-
 module EzpayInvoice
   class Client
     include EzpayInvoice::Configurable

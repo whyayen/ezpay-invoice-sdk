@@ -1,6 +1,6 @@
-require 'ezpay-invoice/version'
-require 'ezpay-invoice/configurable'
-require 'ezpay-invoice/client'
+require_relative 'ezpay-invoice/version'
+require_relative 'ezpay-invoice/configurable'
+require_relative 'ezpay-invoice/client'
 
 module EzpayInvoice
   class << self
