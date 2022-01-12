@@ -1,5 +1,5 @@
-require "bundler/setup"
-require "ezpay/invoice/sdk"
+require "byebug"
+require "ezpay-invoice"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
