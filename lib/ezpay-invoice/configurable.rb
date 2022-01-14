@@ -5,7 +5,7 @@ module EzpayInvoice
     MODES = ['dev', 'prod']
 
     def mode
-      @mode || 'dev'
+      @mode ||= 'dev'
     end
 
     def mode=(_mode)
