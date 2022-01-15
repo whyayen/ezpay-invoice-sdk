@@ -2,10 +2,18 @@ require 'rest-client'
 require 'addressable/uri'
 require 'json'
 
+require_relative 'response'
+
 module EzpayInvoice
   module Request
     def post(path, data)
-      request(:post, path, data)
+      uri = Addressable::URI.new
+      uri.query_values = data
+      payload = {
+        'MerchantID_' => @merchant_id,
+        'PostData_' => encrypt(uri.query)
+      }
+      request(:post, path, payload)
     end
 
     private
@@ -14,17 +22,14 @@ module EzpayInvoice
       "https://#{subdomain}.ezpay.com.tw/Api/"
     end
 
-    def request(method, path, data)
-      payload = {
-        MerchantID_: @merchant_id,
-        PostData_: encrypt(data.to_json)
-      }
-
-      response = RestClient::Request.execute(
+    def request(method, path, payload)
+      rest_response = RestClient::Request.execute(
         method: method,
         url: Addressable::URI.parse("#{api_endpoint}#{path}").normalize.to_str,
-        data: payload
+        payload: payload
       )
+
+      response = Response.new(rest_response)
     end
 
     def encrypt(data)
