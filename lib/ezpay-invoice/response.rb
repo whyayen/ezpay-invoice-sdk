@@ -16,7 +16,22 @@ module EzpayInvoice
       @body = response_hash
       @status = response_hash['Status']
       @message = response_hash['Message']
-      @result = JSON.parse(response_hash['Result']).deep_transform_keys { |k| k.to_s.underscore }
+      @result = transform_keys(JSON.parse(response_hash['Result']))
+      parse_item_detail
+    end
+
+    private
+    def parse_item_detail
+      if @result.has_key?('item_detail')
+        item_detail = JSON.parse(@result['item_detail']).map { |item| transform_keys(item) }
+        @result['item_detail'] = item_detail
+      end
+    end
+
+    def transform_keys(hash)
+      hash.deep_transform_keys do |k|
+        k.to_s.underscore
+      end
     end
   end
 end

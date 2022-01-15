@@ -1,0 +1,8 @@
+require_relative 'payloads/base'
+require_relative 'payloads/invoice_issue'
+require_relative 'payloads/invoice_touch_issue'
+require_relative 'payloads/invoice_invalid'
+require_relative 'payloads/invoice_search'
+require_relative 'payloads/allowance_issue'
+require_relative 'payloads/allowance_touch_issue'
+require_relative 'payloads/allowance_invalid'
