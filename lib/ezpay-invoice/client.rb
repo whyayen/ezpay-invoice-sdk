@@ -1,6 +1,9 @@
+require_relative 'request'
+
 module EzpayInvoice
   class Client
     include EzpayInvoice::Configurable
+    include EzpayInvoice::Request
 
     def initialize(options = {})
       EzpayInvoice::Configurable.attributes.each do |key|
