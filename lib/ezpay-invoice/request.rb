@@ -23,13 +23,13 @@ module EzpayInvoice
     end
 
     def request(method, path, payload)
-      rest_response = RestClient::Request.execute(
+      response = RestClient::Request.execute(
         method: method,
         url: Addressable::URI.parse("#{api_endpoint}#{path}").normalize.to_str,
         payload: payload
       )
 
-      response = Response.new(rest_response)
+      Response.new(response)
     end
 
     def encrypt(data)
