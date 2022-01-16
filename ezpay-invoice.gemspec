@@ -1,13 +1,20 @@
-require_relative 'lib/ezpay-invoice/version'
+lib = File.expand_path('lib', __dir__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'ezpay-invoice/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "ezpay-invoice-sdk"
+  spec.name          = "ezpay-invoice"
   spec.version       = EzpayInvoice::VERSION
   spec.authors       = ["Whyayen"]
   spec.email         = ["c75a90@gmail.com"]
 
-  spec.summary       = %q{The unofficial EzPay invoice ruby SDK.}
-  spec.description   = %q{The unofficial EzPay invoice ruby SDK.}
+  spec.add_dependency 'rest-client', '~> 2.1.0'
+  spec.add_dependency 'hashie', '~> 5.0.0'
+  spec.add_dependency 'addressable', '~> 2.8.0'
+  spec.add_dependency 'activesupport', ['>= 5.0.0', '<= 7.0.1']
+
+  spec.summary       = %q{The unofficial Ezpay invoice ruby SDK.}
+  spec.description   = %q{The package would be able to issue invoice, invalid invoice on Ezpay}
   spec.homepage      = "https://github.com/whyayen/ezpay-invoice-sdk"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
