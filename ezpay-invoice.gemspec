@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Whyayen"]
   spec.email         = ["c75a90@gmail.com"]
 
-  spec.summary       = %q{Unofficial EzPay invoice SDK.}
-  spec.description   = %q{Unofficial EzPay invoice SDK.}
+  spec.summary       = %q{The unofficial EzPay invoice ruby SDK.}
+  spec.description   = %q{The unofficial EzPay invoice ruby SDK.}
   spec.homepage      = "https://github.com/whyayen/ezpay-invoice-sdk"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
