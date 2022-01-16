@@ -1,4 +1,6 @@
 # Ezpay Invoice SDK (Unofficial)
+[![Gem Version](https://badge.fury.io/rb/ezpay-invoice.svg)](http://badge.fury.io/rb/ezpay-invoice)
+
 Ruby SDK for Ezpay Invoice.
 
 ## Table of Contents
