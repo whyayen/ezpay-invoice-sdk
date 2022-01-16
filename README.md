@@ -26,7 +26,7 @@ Ruby SDK for Ezpay Invoice.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ezpay-invoice-sdk'
+gem 'ezpay-invoice'
 ```
 
 And then execute:
@@ -35,11 +35,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install ezpay-invoice-sdk
+    $ gem install ezpay-invoice
 
 Access the library in Ruby:
 ```ruby
-require 'ezpay-invoice-sdk'
+require 'ezpay-invoice'
 ```
 
 ## Usage
